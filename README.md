@@ -1,5 +1,5 @@
-# Session Management Server #
-This is a simple session management server build using Java Spring boot and uses redis as in memory database. Supports String and HashMap    
+# Session Management Client Service #
+This is a simple session management client service build using Java Spring boot and uses redis as in memory database. Supports String and HashMap    
 
 To get started simply include it as a new module in the `settings.gradle` file.
 
