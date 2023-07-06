@@ -7,15 +7,18 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Repository
 public class RedisRepository {
+
+    private long ttl = 2678400L;
 
     @Autowired
     private RedisTemplate redisTemplate;
 
     public void setSessionString(StringDTO stringDTO){
-        redisTemplate.opsForValue().set(stringDTO.getKey(), stringDTO.getData());
+        redisTemplate.opsForValue().set(stringDTO.getKey(), stringDTO.getData(), ttl, TimeUnit.SECONDS);
     }
 
     public String getSessionString(String key){
