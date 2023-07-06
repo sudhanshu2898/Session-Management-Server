@@ -31,7 +31,7 @@ spring.redis.host = "localhost"
 spring.redis.port = 6379
 ```
 
-### *Step 4: Create Instance of Redis Service class* ###
+### *Step 5: Create Instance of Redis Service class* ###
 Use @Autowired in application to auto inject RedisService class.
 
 ```
