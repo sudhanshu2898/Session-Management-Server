@@ -1,10 +1,15 @@
 package api.redis.models;
 
+import jakarta.validation.constraints.NotBlank;
+
 import java.util.Map;
 
 public class HashMapDTO {
+    @NotBlank(message = "Required filed hashName is missing.")
     String hashName;
     String key;
+
+    @NotBlank(message = "Required filed data is missing.")
     Map<String, Object> data;
 
     public HashMapDTO() {

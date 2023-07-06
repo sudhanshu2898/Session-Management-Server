@@ -1,15 +1,19 @@
 package api.redis.models;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class StringDTO {
     String key;
-    String data;
+
+    @NotBlank(message = "Required filed value is missing.")
+    String value;
 
     public StringDTO() {
     }
 
-    public StringDTO(String key, String data) {
+    public StringDTO(String key, String value) {
         this.key = key;
-        this.data = data;
+        this.value = value;
     }
 
     public String getKey() {
@@ -20,11 +24,11 @@ public class StringDTO {
         this.key = key;
     }
 
-    public String getData() {
-        return data;
+    public String getValue() {
+        return value;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setValue(String value) {
+        this.value = value;
     }
 }
