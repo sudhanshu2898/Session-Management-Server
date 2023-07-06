@@ -1,9 +1,8 @@
-# Session Management Client Service #
-This is a simple session management client service build using Java Spring boot and uses redis as in memory database. Supports String and HashMap    
+# Session Management Server #
+This is a simple session management server build using Java Spring boot and uses redis as in memory database. Supports String and HashMap
 
+### *Step 1: Include in Module in project*  ###
 To get started simply include it as a new module in the `settings.gradle` file.
-
-Eg:
 ```
 rootProject.name = 'Auth-Service'
 
@@ -12,10 +11,18 @@ include('session-manager')
 project(':app').projectDir = file('app')
 ```
 
-### *Step 1: Start redis server*  ###
+### *Step 2: Implement Module in project*  ###
+Now update application level `build.gradle` to include module as dependency
+```
+dependencies {
+    implementation(project(':session-manager'))
+}
+```
+
+### *Step 3: Start redis server*  ###
 Install and start redis server with the `redis-server` command
 
-### *Create Instance of Redis Service class* ###
+### *Step 4: Create Instance of Redis Service class* ###
 Use @Autowired in application to auto inject RedisService class.
 
 ```
