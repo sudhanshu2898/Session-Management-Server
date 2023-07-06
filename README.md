@@ -22,6 +22,15 @@ dependencies {
 ### *Step 3: Start redis server*  ###
 Install and start redis server with the `redis-server` command
 
+
+### *Step 4: Update Server configuration in application.properties* ###
+Update session-manager level `application.properties` file to point to installed redis server
+
+```
+spring.redis.host = "localhost"
+spring.redis.port = 6379
+```
+
 ### *Step 4: Create Instance of Redis Service class* ###
 Use @Autowired in application to auto inject RedisService class.
 
